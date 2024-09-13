@@ -1,10 +1,17 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+// src/main.jsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ShareForm from './components/ShareForm';
+import ShareDisplay from './components/ShareDisplay';
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<ShareForm />} />
+        <Route path="/:slug" element={<ShareDisplay />} />
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
+);
