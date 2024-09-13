@@ -16,7 +16,7 @@ function ShareForm() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/api/shares', formData);
+      const response = await axios.post('https://everything-share-production.up.railway.app/api/shares', formData);
       setMessage(`Content shared! Your link is: ${window.location.origin}/${response.data.slug}`);
     } catch (error) {
       setMessage('Failed to share content.');

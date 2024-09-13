@@ -8,7 +8,7 @@ function ShareDisplay() {
   const [share, setShare] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/api/shares/${slug}`)
+    axios.get(`https://everything-share-production.up.railway.app/api/shares/${slug}`)
       .then((response) => setShare(response.data))
       .catch(() => setShare(null));
   }, [slug]);
@@ -18,7 +18,7 @@ function ShareDisplay() {
   return (
     <div>
       {share.content && <p>{share.content}</p>}
-      {share.file_path && <img src={`http://localhost:8000/storage/${share.file_path}`} alt="Shared" />}
+      {share.file_path && <img src={`https://everything-share-production.up.railway.app/storage/${share.file_path}`} alt="Shared" />}
       <p>Expires at: {new Date(share.expires_at).toLocaleString()}</p>
     </div>
   );
