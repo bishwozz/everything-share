@@ -24,16 +24,19 @@ function ShareForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <textarea
-        placeholder="Share your text..."
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-      />
-      <input type="file" onChange={(e) => setFile(e.target.files[0])} />
-      <button type="submit">Share</button>
-      {message && <p>{message}</p>}
-    </form>
+    <>
+      <form onSubmit={handleSubmit}>
+        <textarea
+          placeholder="Share your text..."
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+        />
+        <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+        <button type="submit">Share</button>
+        {message && <p>{message}</p>}
+      </form>
+      <a href="/test">Test</a>
+    </>
   );
 }
 
