@@ -1,6 +1,7 @@
 // src/components/ShareForm.js
 import { useState } from 'react';
 import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 
 function ShareForm() {
   const [content, setContent] = useState('');
@@ -35,7 +36,7 @@ function ShareForm() {
         <button type="submit">Share</button>
         {message && <p>{message}</p>}
       </form>
-      <a href="/test">Test</a>
+      <NavLink to="/test">Test</NavLink>
     </>
   );
 }
